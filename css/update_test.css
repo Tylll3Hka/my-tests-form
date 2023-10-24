@@ -1,0 +1,77 @@
+.form-update-test {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-update-test label input,
+.form-update-test label textarea {
+    max-width: 530px;
+    min-width: 300px;
+    min-height: 52px;
+    height: 52px;
+    resize: vertical;
+    width: 100%;
+    padding: 17px 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #E1E5EC;
+}
+
+.form-update-test div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-update-test div button {
+    background: #84ff76;
+}
+
+.form-update-test div button:hover {
+    background: #94ff98;
+}
+
+.form-update-test div a {
+    background: #80adff;
+}
+
+.form-update-test div a:hover {
+    background: #9ec0ff;
+}
+
+.form-update-test div a, .form-update-test button {
+    flex-basis: 0;
+    flex-grow: 1;
+    color: #1C1C1C;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 17px 25px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container {
+    margin-top: 120px;
+}
+
+.form-update-test button {
+    background: #f98aff;
+}
+
+.question-test {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.header-question {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

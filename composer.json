@@ -1,0 +1,28 @@
+{
+    "name": "tylll/gforms",
+    "description": "forms for example",
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        },
+        "files": [
+            "boot.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "tylllenka"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.0"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+      "ext-pdo": "*"
+    }
+}
