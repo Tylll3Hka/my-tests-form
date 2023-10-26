@@ -289,3 +289,8 @@ body {
     border-radius: 10px;
     background: #73ff78;
 }
+
+.description h3 {
+    width: 100%;
+    text-align: center;
+}

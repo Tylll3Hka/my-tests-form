@@ -29,6 +29,12 @@ $test = $testRep->find($_GET['id']);
 $user = $userRep->findById($test['user_id']);
 $questions = $questionRep->listQuestions($test['id']);
 $bgt = $bgtRep->findById($test['id'], $_SESSION['id']);
+
+if ($bgt['finished_at'] != null) {
+    header('Location: /test.php?id='.$bgt['test_id']);
+    exit();
+}
+
 ?>
 <body>
 <header class="header">

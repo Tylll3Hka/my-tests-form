@@ -29,6 +29,36 @@ class OptionRepository
         ]);
     }
 
+    public function countOptionsIsValid(int $testId)
+    {
+        $query = $this->pdo->prepare(
+            "SELECT COUNT(*) FROM `questions`
+            INNER JOIN `options` ON options.question_id = questions.id
+            AND (SELECT COUNT(*) FROM options WHERE options.question_id = questions.id) > 1
+            AND (SELECT COUNT(*) FROM options WHERE options.question_id = questions.id AND options.is_valid = 1) > 0
+            WHERE test_id = :test_id AND options.is_valid = 1"
+        );
+        $query->execute([
+            'test_id' => $testId
+        ]);
+        return $query->fetch();
+    }
+
+    public function countOptionsIsInvalid(int $testId)
+    {
+        $query = $this->pdo->prepare(
+            "SELECT COUNT(*) FROM `questions`
+            INNER JOIN `options` ON options.question_id = questions.id
+            AND (SELECT COUNT(*) FROM options WHERE options.question_id = questions.id) > 1
+            AND (SELECT COUNT(*) FROM options WHERE options.question_id = questions.id AND options.is_valid = 1) > 0
+            WHERE test_id = :test_id AND options.is_valid = 0"
+        );
+        $query->execute([
+            'test_id' => $testId
+        ]);
+        return $query->fetch();
+    }
+
     public function list(int $questionId): bool|array
     {
         $query = $this->pdo->prepare("SELECT * FROM `options` WHERE `question_id` = :question_id");
